@@ -55,6 +55,9 @@
 
       homebrew = {
         enable = true;
+        brews = [
+          "nvm"
+        ];
         casks = [
           "warp"
           "google-chrome"
@@ -64,7 +67,9 @@
           "chatgpt"
           "microsoft-teams"
           "font-fira-code"
+          "flycut"
         ];
+
         onActivation.cleanup = "zap";
       };
 
