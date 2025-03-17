@@ -8,7 +8,7 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     alejandra.url = "github:kamadorueda/alejandra/3.1.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager"; # Home Manager als Input hinzufügen
+    home-manager.url = "github:nix-community/home-manager";
   };
 
   outputs = inputs @ {
@@ -32,7 +32,6 @@
         pkgs.mkalias
         pkgs.alejandra
         pkgs.git
-        pkgs.nodejs
       ];
 
       fonts.packages = with pkgs; [fira-code];
@@ -50,8 +49,8 @@
         dock.persistent-apps = [
           "/Applications/Google Chrome.app"
           "/Applications/Visual Studio Code.app"
-          "/Applications/Warp.app"
           "/Applications/1Password.app"
+          "/Applications/Warp.app"
           "/Applications/Spotify.app"
           "/Applications/Postman.app"
         ];
@@ -61,6 +60,7 @@
         enable = true;
         brews = [
           "httpie"
+          "nvm"
         ];
         casks = [
           "warp"
@@ -73,6 +73,8 @@
           "font-fira-code"
           "flycut"
           "postman"
+          "docker"
+          "dbeaver-community"
         ];
 
         onActivation.cleanup = "zap";
