@@ -32,6 +32,7 @@
         pkgs.mkalias
         pkgs.alejandra
         pkgs.git
+        pkgs.nodejs
       ];
 
       users.users.florian = {
@@ -56,7 +57,6 @@
       homebrew = {
         enable = true;
         brews = [
-          "nvm"
         ];
         casks = [
           "warp"
