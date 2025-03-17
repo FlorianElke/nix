@@ -35,6 +35,8 @@
         pkgs.nodejs
       ];
 
+      fonts.packages = with pkgs; [fira-code];
+
       users.users.florian = {
         home = lib.mkDefault "/Users/florian";
       };
@@ -51,12 +53,14 @@
           "/Applications/Warp.app"
           "/Applications/1Password.app"
           "/Applications/Spotify.app"
+          "/Applications/Postman.app"
         ];
       };
 
       homebrew = {
         enable = true;
         brews = [
+          "httpie"
         ];
         casks = [
           "warp"
@@ -68,6 +72,7 @@
           "microsoft-teams"
           "font-fira-code"
           "flycut"
+          "postman"
         ];
 
         onActivation.cleanup = "zap";
