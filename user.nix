@@ -11,6 +11,10 @@
       ll = "ls -l";
       nix-recompile = "darwin-rebuild switch --flake ~/.config/nix#macos --impure";
     };
+    shellInit = ''
+           export NVM_DIR="$([ -z "~" ] && printf %s "~/.nvm" || printf %s "~/nvm")"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    '';
   };
 
   home.sessionVariables = {
